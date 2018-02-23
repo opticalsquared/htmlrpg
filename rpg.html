@@ -10,6 +10,7 @@
     <p style="font-size:20px;color:#ffaaaa;font-family:courier;position:relative;top:-3%;" id="mhp">Monster: HP: 5/5</p>
     <p style="font-size:30px;background-color:#ccffcc;font-family:courier;width:98%" id="bar1">player</p>
     <p style="font-size:30px;background-color:#ffcccc;font-family:courier;width:98%" id="bar2">enemy</p>
+    <p style="font-size:30px;background-color:#ccccff;font-family:courier;width:98%" id="bar3">exp</p>
 <button id="at" type="button" onclick="att()" style="position:relative;left:1%; width:98%">Attack</button>
 <button id="de" type="button" onclick="def()" style="position:relative;left:1%; width:98%">Defend</button>
     <script>
@@ -21,10 +22,17 @@
         document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1];
         document.getElementById("bar2").style = "font-size:30px;background-color:#ffcccc;font-family:courier;width:" + ((enem[0]/enem[1])*98) +"%;";
         document.getElementById("bar1").style = "font-size:30px;background-color:#ccffcc;font-family:courier;width:" + ((plr[2]/plr[3])*98) +"%;";
+        document.getElementById("bar3").style = "font-size:30px;background-color:#ccccff;font-family:courier;width:" + ((plr[1]/(plr[0]*20))*98) +"%;";
         enemyattack();
       }
       function enemyattack() {
         plr[3] = plr[3] - enem[3];
+      }
+      function enemydeath() {
+        if (enem[0] < 1) {
+          enem[0] = enem[1]
+          plr[1] = plr[1] + enem[1]*0.1;
+        }
       }
     </script>
   </body>
