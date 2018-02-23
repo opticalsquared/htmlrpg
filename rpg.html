@@ -8,13 +8,16 @@
   <body>
     <p style="font-size:30px;background-color:#ffcccc;color:#ffaaaa;font-family:courier;" id="title">HTMLRPG</p>
     <p style="font-size:20px;color:#ffaaaa;font-family:courier;position:relative;top:-3%;" id="mhp">Monster: HP: 5/5</p>
-    <p style="font-size:30px;background-color:#ccffcc;font-family:courier;width:49.5%" id="bar1">gain</p>
-    <p style="font-size:30px;background-color:#ffcccc;font-family:courier;width:49.5%" id="bar2">lost</p>
+    <p style="font-size:30px;background-color:#ccffcc;font-family:courier;width:49.5%" id="bar1">player</p>
+    <p style="font-size:30px;background-color:#ffcccc;font-family:courier;width:49.5%" id="bar2">enemy</p>
 <button id="at" type="button" onclick="att()" style="position:relative;left:1%; width:98%" hidden>Attack</button>
 <button id="de" type="button" onclick="def()" style="position:relative;left:1%; width:98%" hidden>Defend</button>
     <script>
       var prefixmhp = "Monster: HP: ";
       var enem = [5,5,1,2,1]; //hp: 1 mhp: 2, lv:3, at:4, de:5
+      function att() {
+        document.getElementsById("bar2").style = "font-size:30px;background-color:#ffcccc;font-family:courier;width:" + ((enem[0]/enem[1])*0.99) +"%;"
+      }
     </script>
   </body>
 </html>
