@@ -18,6 +18,7 @@
       var enem = [5,5,1,2,1]; //hp: 1 mhp: 2, lv:3, at:4, de:5
       function att() {
         enem[0] = enem[0] - (plr[5]/enem[5]);
+        document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1]
         document.getElementById("bar2").style = "font-size:30px;background-color:#ffcccc;font-family:courier;width:" + ((enem[0]/enem[1])*98) +"%;";
       }
     </script>
