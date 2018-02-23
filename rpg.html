@@ -14,9 +14,11 @@
 <button id="de" type="button" onclick="def()" style="position:relative;left:1%; width:98%">Defend</button>
     <script>
       var prefixmhp = "Monster: HP: ";
+      var plr = [1,0,10,10,2,1]; //lv, ex, hp, mhp, at, de
       var enem = [5,5,1,2,1]; //hp: 1 mhp: 2, lv:3, at:4, de:5
       function att() {
         document.getElementById("bar2").style = "font-size:30px;background-color:#ffcccc;font-family:courier;width:" + ((enem[0]/enem[1])*99) +"%;";
+        enem[0] = enem[0] - (plr[5]/enem[5])
       }
     </script>
   </body>
