@@ -14,13 +14,17 @@
 <button id="de" type="button" onclick="def()" style="position:relative;left:1%; width:98%">Defend</button>
     <script>
       var prefixmhp = "Monster: HP: ";
-      var plr = [1,0,10,10,2,1]; //lv, ex, hp, mhp, at, de
-      var enem = [10,10,1,2,1]; //hp: 1 mhp: 2, lv:3, at:4, de:5
+      var plr = [1,0,40,40,20,10]; //lv, ex, hp, mhp, at, de
+      var enem = [40,40,1,20,10]; //hp: 1 mhp: 2, lv:3, at:4, de:5
       function att() {
-        enem[0] = enem[0] - plr[5];
-        document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1]
+        enem[0] = enem[0] - (plr[4]-plr[5]);
+        document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1];
         document.getElementById("bar2").style = "font-size:30px;background-color:#ffcccc;font-family:courier;width:" + ((enem[0]/enem[1])*98) +"%;";
-        document.getElementById("bar1").style = "font-size:30px;background-color:#ccffcc;font-family:courier;width:" + ((plr[3]/plr[4])*98) +"%;";
+        document.getElementById("bar1").style = "font-size:30px;background-color:#ccffcc;font-family:courier;width:" + ((plr[2]/plr[3])*98) +"%;";
+        enemyattack();
+      }
+      function enemyattack() {
+        plr[3] = plr[3] - 1;
       }
     </script>
   </body>
