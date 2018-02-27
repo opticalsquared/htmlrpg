@@ -25,10 +25,10 @@
         document.getElementById("bar3").style = "font-size:30px;background-color:#ccccff;font-family:courier;width:" + ((plr[1]/(plr[0]*20))*98) +"%;";
         enemyattack();
         enemydeath();
-      }
         if (plr[1] > (plr[0]*20)) {
-          plr[0]++;
+          plr[0] = plr[0] + 1;
           plr[1] = 0;
+      }
       }
       function enemyattack() {
         plr[3] = plr[3] - enem[3];
