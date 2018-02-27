@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>
-    HTMLRPG v1?
+    HTMLRPG v0.3
   </title>
 </head>
   <body>
@@ -16,7 +16,7 @@
     <script>
       var prefixmhp = "Monster: HP: ";
       var plr = [1,0,40,40,15,7]; //lv, ex, hp, mhp, at, de
-      var enem = [40,40,1,10,4]; //hp: 1 mhp: 2, lv:3, at:4, de:5
+      var enem = [40,40,1,8,3]; //hp: 1 mhp: 2, lv:3, at:4, de:5
       function att() {
         enem[0] = enem[0] - (plr[4]-plr[5]);
         document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1];
