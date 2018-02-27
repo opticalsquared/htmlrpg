@@ -15,8 +15,8 @@
 <button id="de" type="button" onclick="def()" style="position:relative;left:1%; width:98%">Defend</button>
     <script>
       var prefixmhp = "Monster: HP: ";
-      var plr = [1,0,40,40,20,10]; //lv, ex, hp, mhp, at, de
-      var enem = [40,40,1,20,10]; //hp: 1 mhp: 2, lv:3, at:4, de:5
+      var plr = [1,0,40,40,15,7]; //lv, ex, hp, mhp, at, de
+      var enem = [40,40,1,10,4]; //hp: 1 mhp: 2, lv:3, at:4, de:5
       function att() {
         enem[0] = enem[0] - (plr[4]-plr[5]);
         document.getElementById("mhp").innerHTML = "Monster: HP: " + enem[0] +"/"+ enem[1];
@@ -28,10 +28,12 @@
         if (plr[1] > (plr[0]*20)) {
           plr[0] = plr[0] + 1;
           plr[1] = 0;
+          plr[5] = Math.floor(plr[5] * 1.1);
+          plr[4] = Math.floor(plr[4] * 1.1);
       }
       }
       function enemyattack() {
-        plr[2] = plr[2] - enem[3];
+        plr[2] = plr[2] - (enem[3]-plr[5]);
       }
       function enemydeath() {
         if (enem[0] < 1) {
